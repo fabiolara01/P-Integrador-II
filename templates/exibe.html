@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1> Dados Cadastrais </h1><hr>
+
+    <p> CPF/CNPJ: {{ cadastro['id'] }}<br>
+        Nome: {{ cadastro['nome'] }}<br>
+        Contato: {{ cadastro['contato'] }}<br>
+        E-mail: {{ cadastro['email'] }}<br>
+        Cidade: {{ cadastro['cidade'] }}<br>
+        Estado: {{ cadastro['estado'] }}<br>
+        Serviço: {{ cadastro['servico'] }}<br>
+        Descrição: {{ cadastro['conteudo'] }}<br><hr>
+        <strong>Nota (média): {{ cadastro['nota'] }}</strong><br>
+        Avaliações: {{ cadastro['numero'] }}<br>
+        <span class="badge badge-primary"> Cadastrado desde: {{ cadastro['created'] }}</span><hr>
+
+    <h3> <a href="{{ url_for('score', id=cadastro['id']) }}">
+            <span class="badge badge-warning">Avaliar</span>
+        </a>
+
+{% endblock %}

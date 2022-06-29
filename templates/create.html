@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{% block title %} Cadastre-se {% endblock %}</h1>
+
+<form method="POST">
+    <hr>
+    <div class="form-group">
+        <label for="nome"> Nome/razão/fantasia</label>
+        <input type="text" name="nome" placeholder="nome ou razao social"
+    class="form-control" value="{{ request.form['nome'] }}">
+    </div>
+
+    <div class="form-group">
+        <label for="contato"> Telefone de contato*</label>
+        <input type="text" name="contato" placeholder="Digite seu contato (apenas números, ex: 11900001111)"
+                  class="form-control" value="{{ request.form['contato'] }}"> </input>
+    </div>
+    <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" placeholder="Cidade de localização"
+                  class="form-control" value="{{ request.form['cidade'] }}"> </input>
+    </div>
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <input type="text" name="estado" placeholder="SP"
+                  class="form-control" value="{{ request.form['estado'] }}"> </input>
+    </div>
+    <div class="form-group">
+        <label for="servico">Serviço*</label>
+        <input type="text" name="servico" placeholder="Serviço prestado"
+                  class="form-control" value="{{ request.form['servico'] }}"> </input>
+    </div>
+    <div class="form-group">
+        <label for="conteudo"> Descrição dos serviços</label>
+        <input type="text" name="conteudo" placeholder="Descreva seus serviços e acrescente informações importantes."
+                  class="form-control" value="{{ request.form['conteudo'] }}"> </input>
+    </div>
+
+    <p> * Campos obrigatórios </p>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+
+        <h3><a href="/valida">
+            <span class="badge badge-warning">Voltar</span>
+        </a></h3>
+    </div>
+</form>
+
+{% endblock %}

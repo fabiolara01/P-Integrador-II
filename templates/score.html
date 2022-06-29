@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Avaliar {{ edicao['nome'] }} {% endblock %}</h1>
+
+<form method="POST">
+    <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" placeholder="Cidade"
+               class="form-control"
+               value="{{ edicao['cidade'] }}" readonly>
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <input type="text" name="estado" placeholder="Estado (ex: SP)"
+               class="form-control"
+               value="{{ edicao['estado'] }}" readonly>
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="servico">Serviço*</label>
+        <input type="text" name="servico" placeholder="(ex: pedreiro)"
+               class="form-control"
+               value="{{ edicao['servico'] }}" readonly>
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="nota">Nota do Serviço ou do Profissional</label>
+        <input type="number" name="nota" placeholder="Apenas números. Ex: 10, 9, 8, 0..."
+               class="form-control" value="{{ request.form['nota'] }}">
+        </input>
+   </div>
+   <div class="form-group">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
+{% endblock %}

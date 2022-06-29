@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{% block title %} Bem vindo ao Cadastro de profissionais da construção civil {% endblock %}</h2><hr>
+
+<h3>{% block body %}
+    <div> ENCONTRE UM PROFISSIONAL <br>
+        <a href="/dashboard">
+        <span class="badge badge-warning">Buscar</span></a>
+    </div><hr>
+
+    <div>
+    PROFISSIONAL DA CONSTRUÇÃO CIVIL, não possui cadastro ? <br>
+    <a href= "/busca"> Clique aqui para se cadastrar</a> <hr>
+
+    ACESSE SEU CADASTRO <br>
+     <a href= "/buscar"> Clique Aqui</a>
+    </div><hr>
+    {% endblock %}</h3>
+
+
+    <p>*desenvolvido pelos alunos f,f,f</p>
+
+{% endblock %}
